@@ -1,0 +1,76 @@
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 7.9375em;
+  height: 1.875em;
+}
+
+.switch input {
+    display: none;
+   }
+.switch input:checked + .slider {
+      background-color: #65619E;
+
+ }
+.switch input:checked + .slider:after {
+        content: 'ON';
+        left: 20px;
+
+
+}
+.switch input:checked + .slider:before {
+        transform: translateX(94px);
+
+
+ }
+.switch input:focus + .slider {
+      box-shadow: 0 0 1px #2196f3;
+ }
+.switch .slider {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    transition: .4s;
+    cursor: pointer;
+    background-color: #808080;
+   }
+.switch .slider:before {
+      content: "";
+      position: absolute;
+      left: 0px;
+      bottom: 4px;
+      height: 1.375em;
+      width: 1.5em;
+      background-color: #FFF;
+      transition: .4s;
+      margin-left: 3px;
+    }
+.switch .slider:after {
+      content: 'OFF';
+      color: white;
+      display: block;
+      position: absolute;
+      transform: translate(-50%, -50%);
+      top: 50%;
+      left: 100px;
+      font-size: 0.875em;
+      font-weight: 700; }
+
+.slider.round {
+  border-radius: 2.125em;
+ }
+
+.slider.round:before {
+  border-radius: 50%;
+ }
+
+.settings__switch {
+  text-align: center;
+}
+
+.profile-set,
+.email-not {
+  text-align: left;
+}
