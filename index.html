@@ -230,24 +230,57 @@
 
             </div class="message-user">
               <div class="grid-message">
-                    <form action="#" class="contact-form" method="post" autocomplete="off">
-                      <div class="grid-select">
-                        <h1 class="set-title"> Message User </h1>
-                        <p class="confirmation-1">Thank you, your message has ben sent.</p>
-                        <div class="search-container">
-                        <select name="select-user" id="select-user" class="user-search">
-                          <option value="" selected disabled>Select a user...</option>
-                          <option value="John">John</option>
-                          <option value="Lughni">Lughni</option>
-                          <option value="Jaka">Jaka</option>
-                          <option value="Nocholas">Nocholas</option>
-                        </select>
-                            </div>
-                            <textarea class="user-message" name="message" rows="8" cols="20" placeholder="Message for user"></textarea>
-                            <button id="message-user" class="btn btn--default" type="submit" name="button">Send</button>
-                            <button id="message-again" class="btn btn--default" type="save" name="button">Send Another Message</button>
-                      </div>
-                    </form>
+                <form  id="form" onsubmit="alert("Nice")" class="contact-form" method="post" autocomplete="off" onsubmit="sayThanks()">
+                  <div class="grid-select">
+                    <h1 class="set-title"> Message User </h1>
+                    <p style="margin-left: 10px; font-size: 20px; display: none; text-align: center;"class="userMessage1"> Thank You for Your Message</p>
+                    <div class="search-container">
+                      <select name="select-user" id="select-user" class="user-search" >
+                        <option value="" selected disabled>Select a user...</option>
+                        <option value="Lughni">Lughni</option>
+                        <option value="David">David</option>
+                        <option value="John">John</option>
+                        <option value="Andrea">Andrea</option>
+                      </select>
+                    </div>
+                    <textarea class="user-message" name="message" rows="8" cols="20" placeholder="Message for user"></textarea>
+                    <button id="message-user" class="btn btn--default" type="submit" name="button">Send</button>
+                    <button id="message-again" class="btn btn--default" type="" name="button">Your message has been sent :)</button>
+                  </div>
+                </form>
+
+                <script>
+                  var message = document.querySelector('.user-message');
+                  var submit = document.querySelector('#message-user');
+                  var userInput = document.querySelector('.user-search');
+                  var messageBox = document.querySelector(".grid-select");
+                  var searchContainer = document.querySelector(".search-container");
+                  var form1 = document.querySelector("#form1");
+                  var messageAgain = document.querySelector('#message-again');
+                  var confirmation1 = document.querySelector('.confirmation-1');
+                  var confirmation2 = document.querySelector('.confirmation-2');
+                  var userMessage1 = document.querySelector('.userMessage1');
+
+
+                  form.addEventListener('click', function(e){
+                    e.preventDefault();
+                    if (userInput.value === '') {
+                        prompt('Please select the user you want to message.');
+                      } else if (message.value === '') {
+                        alert('Please enter a message');
+                      } else {
+
+                        searchContainer.style.display = "none";
+                        userInput.style.display = "none";
+                        message.style.display = "none";
+                        submit.style.display = "none";
+                        userMessage1.style.display = "block";
+                        messageAgain.style.display = "block";
+                    }
+                  })
+
+
+                </script>
 
                     <form class="sett">
                       <div class="grid-save">
@@ -276,11 +309,11 @@
                   			<div class="main-contact" id="main-contact">
                           <select class="timezone" name="timezone" required oninvalid="this.setCustomValidity('Please select a timezone to save your changes!')" oninput="this.setCustomValidity('')">
                           <option value="" selected disabled>Select your timezone</option>
-                          <option value="Malaysia">Malaysia</option>
-                          <option value="Shanghai">shangai</option>
-                          <option value="Japan">Japan</option>
-                          <option value="Jakarta">Jakarta</option>
-                          <option value="pacific">Munich</option>
+                          <option value="eastern">Eastern</option>
+                          <option value="central">Central</option>
+                          <option value="mountain">Mountain</option>
+                          <option value="arizona">Arizona</option>
+                          <option value="pacific">Pacific</option>
                           </select>
                           <button class="btn btn--default save" type="submit" name="save">Save</button>
                           <button class="btn btn--cancel reset" type="reset" name="button">Cancel</button>
@@ -292,11 +325,9 @@
   		</main>
 
 
-      <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0/dist/Chart.min.js"></script>
-      <script src="main.js"></script>
-
-
-
-
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0/dist/Chart.min.js"></script>
+  <script type="text/javascript" src="main.js"></script>
+  <script type="text/javascript" src="notification.js"></script>
+  <script type="text/javascript" src="menu.js"></script>
   </body>
 </html>
