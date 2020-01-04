@@ -255,7 +255,7 @@
                   var userInput = document.querySelector('.user-search');
                   var messageBox = document.querySelector(".grid-select");
                   var searchContainer = document.querySelector(".search-container");
-                  var form1 = document.querySelector("#form1");
+                  var form = document.querySelector("#form");
                   var messageAgain = document.querySelector('#message-again');
                   var confirmation1 = document.querySelector('.confirmation-1');
                   var confirmation2 = document.querySelector('.confirmation-2');
@@ -265,7 +265,7 @@
                   form.addEventListener('click', function(e){
                     e.preventDefault();
                     if (userInput.value === '') {
-                        prompt('Please select the user you want to message.');
+                        alert('Please select the user you want to message.');
                       } else if (message.value === '') {
                         alert('Please enter a message');
                       } else {
