@@ -1,3 +1,38 @@
+
+  var message = document.querySelector('.user-message');
+  var submit = document.querySelector('#message-user');
+  var userInput = document.querySelector('.user-search');
+  var messageBox = document.querySelector(".grid-select");
+  var searchContainer = document.querySelector(".search-container");
+  var form = document.querySelector("#form");
+  var messageAgain = document.querySelector('#message-again');
+  var confirmation1 = document.querySelector('.confirmation-1');
+  var confirmation2 = document.querySelector('.confirmation-2');
+  var userMessage1 = document.querySelector('.userMessage1');
+
+
+  form.addEventListener('click', function(e){
+    e.preventDefault();
+    if (e.target === submit) {
+                       if (userInput.value === '') {
+                        window.alert('Please select the user you want to message.');
+                      } else if (message.value === '') {
+                        window.alert('Please enter a message');
+                      } else {
+                        searchContainer.style.display = "none";
+                        userInput.style.display = "none";
+                        message.style.display = "none";
+                        submit.style.display = "none";
+                        userMessage1.style.display = "block";
+                        messageAgain.style.display = "block";
+        }}
+  });
+
+
+
+
+
+// chart
 const areaLine = document.getElementById('lineChart').getContext('2d');
 const fillPattern = areaLine.createLinearGradient(0,300,0,0);
   fillPattern.addColorStop(0,"rgba(216, 38, 38, 1)");
